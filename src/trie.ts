@@ -39,7 +39,7 @@ export class Trie {
     let node = this.root;
 
     // for every character in the word
-    for (var i = 0; i < word.length; i++) {
+    for (let i = 0; i < word.length; i++) {
       // check to see if character node exists in children.
       if (!node.children[word[i]]) {
         // if it doesn't exist, we then create it.
@@ -64,7 +64,7 @@ export class Trie {
     let node = this.root;
 
     // for every character in the word
-    for (var i = 0; i < word.length; i++) {
+    for (let i = 0; i < word.length; i++) {
       // check to see if character node exists in children.
       if (node.children[word[i]]) {
         // if it exists, proceed to the next depth of the trie.
@@ -84,7 +84,7 @@ export class Trie {
     let output: string[] = [];
 
     // for every character in the prefix
-    for (var i = 0; i < prefix.length; i++) {
+    for (let i = 0; i < prefix.length; i++) {
       // make sure prefix actually has words
       if (node.children[prefix[i]]) {
         node = node.children[prefix[i]];
@@ -101,7 +101,7 @@ export class Trie {
       }
 
       // iterate through each children, call recursive findAllWords
-      for (var child in node.children) {
+      for (let child in node.children) {
         findAllWords(node.children[child], arr);
       }
     };
